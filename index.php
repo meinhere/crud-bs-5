@@ -13,7 +13,7 @@ $perempuan  = query("SELECT * FROM tb_siswa WHERE jenis_kelamin = 'Perempuan'");
 
 $admin = query("SELECT * FROM admin");
 
-$aksi_id = '5';
+$aksi_id = 5;
 ?>
 
 <!DOCTYPE html>

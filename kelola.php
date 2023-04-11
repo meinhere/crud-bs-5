@@ -7,9 +7,9 @@ if (isset($_SESSION['login'])) {
 	exit();
 }
 
-$aksi_id = '5';
+$aksi_id = 5;
 $getUbah = isset($_GET['ubah']) ? $_GET['ubah'] : '';
-$passwordValid = 'admin123';
+$passwordValid = 'password123';
 
 if (isset($_POST['auth'])) {
 	$password = $_POST['password'];
@@ -27,7 +27,7 @@ if (isset($_GET['ubah'])) {
 	$siswa = query("SELECT * FROM tb_siswa WHERE id_siswa = $id");
 
 	foreach ($idAksi as $idValid) {
-		if ($idValid == $aksi_id || $password != $passwordValid) {
+		if ($idValid == $aksi_id && $password != $passwordValid) {
 			$_SESSION['warning'] = "Anda tidak bisa mengubah langsung data dari seorang Administrator, silahkan masukkan <a href='#' class='alert-link btn-ubah' data-bs-toggle='modal' data-bs-target='#mainModal' data-id=$id>password</a> terlebih dahulu";
 			header("Location: index.php");
 			exit();

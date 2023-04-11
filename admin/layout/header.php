@@ -1,7 +1,6 @@
 <?php
+include 'url.php';
 session_start();
-
-define("BASEURL", "http://localhost:8080/belajar_crud");
 
 if (!isset($_SESSION['login'])) {
   header("Location: ../index.php");
